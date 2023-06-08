@@ -6,9 +6,11 @@
 #SBATCH --cpus-per-task=1		# number of cores per task
 #SBATCH --mem-per-cpu=4gb		# memory per core
 #SBATCH --nodes=1			# number of nodes
-#SBATCH --nodelist=node4		# specify node name
+#SBATCH --nodelist=node1		# specify node name
 #SBATCH --ntasks=112			# number of parallel tasks
 #SBATCH --output=parallel_%j.log	# standard output and error log
+
+conda activate cp4
 
 for i in $(seq 1 40 4441); do
     BATCH_START=$i
